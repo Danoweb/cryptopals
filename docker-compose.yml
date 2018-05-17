@@ -1,0 +1,16 @@
+version: '3'
+services:
+  app:
+    build: 
+      context: ./
+      args:
+        # if true then you have to rebuild the image to update deps `docker-compose build`
+        # if false then `docker-compose run app composer install` whenever you want to update deps
+        - COMPOSER_INSTALL=true
+    ports:
+      - "5000:80"
+    volumes:
+      # mount local source so you can edit on the fly
+      - ./:/var/www/html/
+      # mount local composer dir for composer config and cache to speed-up composer
+      - ~/.composer:/composer
