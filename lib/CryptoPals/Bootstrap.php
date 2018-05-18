@@ -15,4 +15,8 @@ class Bootstrap {
     public function convertCustomBase64($target) {
         return base64_encode(pack('H*', $target));
     }
+
+    public function xorBuffers($targetA, $targetB) {
+        return pack('H*', $targetA) ^ pack('H*', $targetB);
+    }
 }
