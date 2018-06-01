@@ -17,6 +17,6 @@ class Bootstrap {
     }
 
     public function xorBuffers($targetA, $targetB) {
-        return pack('H*', $targetA) ^ pack('H*', $targetB);
+        return 
     }
 }
